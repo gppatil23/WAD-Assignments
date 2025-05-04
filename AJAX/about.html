@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li{
+        font-size: 2vmax;
+    }
+</style>
+<body>
+    <h1>User List</h1>
+    <ul id="username"></ul>
+    <script>
+        window.onload = function(){
+            const list = document.getElementById('username');
+            const users = JSON.parse(localStorage.getItem('users')) || []
+            if(users.length === 0){
+                list.innerHTML = 'No user found!!!'
+            }else{
+                users.forEach((user, index) => {
+                    const li = document.createElement("li");
+                    li.innerHTML = ` ${user.email}<br> ${user.password} <br> ${user.age}<br><br>`;
+                    list.appendChild(li);
+                })
+            }
+        }
+    </script>
+</body>
+</html>

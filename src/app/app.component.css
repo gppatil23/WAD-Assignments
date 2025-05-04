@@ -1,0 +1,10 @@
+div{
+    background-color: antiquewhite;
+    width: fit-content;
+    padding: 20px;
+    justify-self: center;
+    
+}
+input{
+    padding:10px;
+}
